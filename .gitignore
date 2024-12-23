@@ -34,5 +34,5 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-# google-services.json
-# testingdb-42b79-firebase-adminsdk-jj5ze-e5ae9b1be9.json
+google-services.json/
+testingdb-42b79-firebase-adminsdk-jj5ze-e5ae9b1be9.json/
