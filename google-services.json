@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "820808800313",
+    "firebase_url": "https://testingdb-42b79-default-rtdb.firebaseio.com",
+    "project_id": "testingdb-42b79",
+    "storage_bucket": "testingdb-42b79.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820808800313:android:c0198aaa88e3540421d5e8",
+        "android_client_info": {
+          "package_name": "com.eashan20.pushNotifications"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTzqBAFP4LQCSQ7CqbjTi9GV-PKYZACYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
