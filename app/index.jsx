@@ -1,29 +1,44 @@
-import { View, Text, Button, TextInput } from 'react-native'
-import React, { useState } from 'react'
-import { router } from 'expo-router'
-import axios from 'axios'
+import { View, Text, Button, TextInput, Alert } from "react-native";
+import React, { useState } from "react";
+import { router } from "expo-router";
+import axios from "axios";
 
 export default function Index() {
-  const [value,setValue]=useState("")
-  const handle=async()=>
-  {
+  const [value, setValue] = useState("");
+  const handle = async () => {
     try {
-      const res=await axios.post("https://exp.host/--/api/v2/push/send",{
-        "to": "ExponentPushToken[Y1xRAQD4ARWNYPCCwQQNN7]",
-        "title":"Hi",
-        "body": value
-      })
-      console.log(res)
+      const res = await axios.post("https://exp.host/--/api/v2/push/send", {
+        to: "ExponentPushToken[Y1xRAQD4ARWNYPCCwQQNN7]",
+        title: "Hi",
+        badge: 1,
+        body: value,
+        sound: "true",
+      });
+      console.log(res);
+      if(res.status===200)
+      {
+        Alert.alert("Notification sent")
+      }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Index</Text>
-      <Button title='uff' onPress={()=>router.push("/browsers")}/>
-        <TextInput placeholder='enter something' value={value} onChangeText={(e)=>setValue(e)}/>
-        <Button title='submit' onPress={handle}/>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <TextInput
+        placeholder="enter something"
+        value={value}
+        onChangeText={(e) => setValue(e)}
+        style={{
+          padding:5,
+          paddingHorizontal: 10,
+          marginVertical: 5,
+          borderStyle: "solid",
+          borderRadius: 4,
+          borderColor: "gray",
+        }}
+      />
+      <Button title="Send Notification" onPress={handle} />
     </View>
-  )
+  );
 }
