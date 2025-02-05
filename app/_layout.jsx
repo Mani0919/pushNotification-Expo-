@@ -22,6 +22,7 @@ export default function Root() {
               headerShown: false,
             }}
           />
+          <Stack.Screen name="browsers" />
         </Stack>
       </NotificationProvider>
     </>
