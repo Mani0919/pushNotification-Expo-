@@ -2,13 +2,15 @@ import { View, Text, Button, TextInput, Alert } from "react-native";
 import React, { useState } from "react";
 import { router } from "expo-router";
 import axios from "axios";
+import { useNotification } from "../context/notification";
 
 export default function Index() {
   const [value, setValue] = useState("");
+  const {expoPushToken}=useNotification()
   const handle = async () => {
     try {
       const res = await axios.post("https://exp.host/--/api/v2/push/send", {
-        to: "ExponentPushToken[Y1xRAQD4ARWNYPCCwQQNN7]",
+        to: expoPushToken,
         title: "Hi",
         badge: 1,
         body: value,
